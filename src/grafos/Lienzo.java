@@ -1,4 +1,4 @@
-package Random;
+package grafos;
 
 import java.awt.Graphics;
 import java.awt.Point;
@@ -21,12 +21,12 @@ public class Lienzo extends JPanel implements MouseListener{
 
     public void paint(Graphics g){
         for(Nodo nodos:vectorNodos){
-            nodos.pintar(g);
+            nodos.pintar(g);}
             for(Enlace enlace:vectorEnlaces){
                 enlace.pintar(g);
             }
-        }
     }
+    
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton()== MouseEvent.BUTTON1){
