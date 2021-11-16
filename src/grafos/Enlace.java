@@ -61,5 +61,13 @@ public class Enlace{
         this.y2 = y2;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
   
 }
