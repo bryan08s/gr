@@ -36,7 +36,7 @@ public class Lienzo extends JPanel implements MouseListener, MouseMotionListener
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton()== MouseEvent.BUTTON1){
-            String nombre = JOptionPane.showInputDialog("ingrese el nombre nodo: ");
+            String nombre = JOptionPane.showInputDialog("Ingrese el nombre nodo: ");
             this.vectorNodos.add(new Nodo(e.getX(),e.getY(), nombre));
             repaint();}
         if (e.getButton()==MouseEvent.BUTTON3){
@@ -47,9 +47,9 @@ public class Lienzo extends JPanel implements MouseListener, MouseMotionListener
                     }
                     else{
                         p2=new Point(nodo.getX(),nodo.getY());
-                        String nombre = JOptionPane.showInputDialog("ingrese el nombre nodo: ");
+                        String nombre = JOptionPane.showInputDialog("Ingrese el nombre nodo: ");
                         this.vectorEnlaces.add(new Enlace(p1.x,p1.y,p2.x,p2.y, nombre));
-                        repaint();
+                        repaint(); 
                         p1=null;
                         p2=null;
                     }
@@ -87,10 +87,10 @@ public class Lienzo extends JPanel implements MouseListener, MouseMotionListener
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        if(nodoMover!=null){
+        if(nodoMover != null){
             this.vectorNodos.set(iNodo, new Nodo(e.getX(),e.getY(), nodoMover.getNombre()));
             int iE = 0;
-            for (Enlace enlace: vectorEnlaces) {
+            for (Enlace enlace : vectorEnlaces) {
                 if (new Rectangle(enlace.getX1()-Nodo.d/2,enlace.getY1()-Nodo.d/2,Nodo.d,Nodo.d).contains(e.getPoint())) {
                     this.vectorEnlaces.set(iE, new Enlace(e.getX(), e.getY(),enlace.getX2(),enlace.getY2(),enlace.getNombre()));
                 }
